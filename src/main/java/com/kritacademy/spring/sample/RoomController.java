@@ -14,6 +14,7 @@ import java.util.List;
  */
 @RestController
 @RequestMapping("/v1/api/rooms")
+@AutoFee("5.00")
 public class RoomController {
     private final RoomService roomService;
 
@@ -23,6 +24,7 @@ public class RoomController {
     }
 
     @RestFilter
+    @AutoFee("3.00")
     @GetMapping("")
     public List<Room> getAll() {
         return roomService.getAll();
